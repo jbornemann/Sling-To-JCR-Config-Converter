@@ -4,9 +4,9 @@ module ConfigConvert
 
 	class Property
 
-		attr_reader :name, :value, :type
+		attr_accessor :name, :value, :type, :values
 
-		def initialize(name, value, type)
+		def initialize(name, type)
 			@name = name
 			@value = value
 			@type = type

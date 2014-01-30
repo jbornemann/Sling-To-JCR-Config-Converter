@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
 <%for $property in $properties%>
-    <%=$property.name%>="<%if ($property.type != "String")%>{<%=$property.type%>}<%end%><%=$property.value%>"    
+    <%=$property.name%>="<%
+    if ($property.type != "String")%>{<%=$property.type%>}<%
+   	end 
+   	if(!$property.values.nil?)%>[<%=$property.values.join(',')%>]<%
+   	elsif(!$property.value.nil?)%><%=$property.value%><%
+   	end %>"  
 <%end%>
 />
