@@ -67,7 +67,7 @@ module ConfigConvert
 		end
 
 		def execute(folderinpath, folderoutpath)
-			if Dir.exists?(folderinpath) && Dir.exists?(folderoutpath)
+			if !folderinpath.nil? && !folderoutpath.nil? &&Dir.exists?(folderinpath) && Dir.exists?(folderoutpath)
 				begin
 					$infolder = Dir.open(folderinpath)
 					$outfolder = Dir.open(folderoutpath)
